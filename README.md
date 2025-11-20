@@ -1,53 +1,75 @@
 # Power-BI-Projects
-# 🚀 Power BI Data Analytics Portfolio: Sales & Business Intelligence
+# 🚀 Power BI Data Analytics Portfolio: Sales & Financial Reporting
 
 ## Project Overview
 
-This repository features a collection of Business Intelligence (BI) projects developed using **Microsoft Power BI Desktop**. These projects demonstrate proficiency across the entire BI workflow, from **data preparation and modeling** to **advanced DAX calculations** and the design of highly interactive, executive-level **dashboards**. The portfolio includes foundational practice and a comprehensive sales analysis solution.
+This repository showcases a comprehensive portfolio of Business Intelligence (BI) projects developed using **Microsoft Power BI Desktop**. These projects demonstrate proficiency across the entire BI workflow, from **data connection and transformation** to **advanced DAX modeling** and the creation of highly interactive, executive-level **dashboards** in both Sales and Financial domains.
 
 ***
 
 ## ⚙️ Core Power BI Skills Demonstrated
 
-This portfolio validates expertise in the following key areas, which are essential for building robust BI solutions:
-
 ### 1. Data Transformation & Modeling (Power Query)
-* **Data Types:** Practiced explicitly setting and converting **data types** (e.g., Currency, Date, Whole Number) in Power Query to ensure accurate calculations and aggregation.
-* **Data Structure:** Managed the structure of the data, transforming the raw data and understanding how to build visualizations by dragging measures into **Visual Columns** and dimensions into **Visual Rows/Axes**.
-* **Model Building:** Established and managed efficient **one-to-many relationships** between Fact and Dimension tables to allow correct filter propagation across the report.
+* **Data Types:** Proficiently connected to raw sources (Excel, CSV) and managed **data types** (e.g., converting text to whole number, decimal to currency) to ensure accurate calculations.
+* **Data Cleansing:** Applied transformation steps in Power Query to handle errors, rename fields, and structure the data for optimal performance.
+* **Visual Building Blocks:** Understood how to construct visualizations by dragging measures into **Visual Columns** and dimensions into **Visual Rows/Axes**, controlling the visual aggregation.
+* **Model Building:** Established and managed relationships between tables (Fact and Dimension) to create robust analytical models.
 
 ### 2. Analytical Calculations (DAX)
 * **Fundamental Functions:** Utilized core **DAX (Data Analysis Expressions)** functions like **`SUM()`**, **`AVERAGE()`**, **`COUNTROWS()`**, and **`CALCULATE()`** to define key business metrics.
-* **Profit Calculation:** Successfully derived the essential business metric of **Profit** by creating a measure using DAX: `Profit = SUM(Sales[Revenue]) - SUM(Sales[Cost])`.
-* **Time Intelligence:** Developed measures for comparative analysis, such as Year-to-Date (YTD) and Year-over-Year (YoY) growth.
+* **Profit Calculation:** Successfully derived the essential business metric of **Profit** by creating a measure using DAX:
+    * `Profit = SUM(Sales[Revenue]) - SUM(Sales[Cost])` (or similar logic based on COGS).
+* **Time Intelligence:** Developed measures for comparative analysis, such as Year-to-Date (YTD) and Year-over-Year (YoY) metrics.
+* **Context Control:** Mastered the use of filter functions (e.g., `ALL`, `FILTER`) within `CALCULATE` for advanced comparative analysis (e.g., "My Performance" vs. total company).
 
 ### 3. Visualization & Interactivity
-* **Dashboard Creation:** Designed multi-page **Dashboards** that are visually compelling and organized for clear data storytelling.
-* **Visualization Types:** Employed a variety of charts, including Line Charts (for trends), Bar Charts (for comparison), and Maps, by effectively mapping data fields to the visual properties.
-* **Filters and Slicers:** Applied various report, page, and visual-level **filters**. Utilized **Slicers** as the primary interactive element, allowing users to dynamically filter data by date, category, and region.
-* **Marks/Aesthetics:** Effectively used the **Visual Formatting Pane** to control visual aesthetics—adjusting colors, axis scales, and data labels (Marks)—to emphasize key data points and improve readability.
+* **Dashboard Design:** Created visually compelling and well-structured **Dashboards** that adhere to best practices for data storytelling.
+* **Visualization Types:** Utilized a variety of visuals (Line, Bar, Map, KPI Cards) by correctly placing fields in the visual's **Rows** and **Columns** to convey clear insights.
+* **Filters and Slicers:** Implemented various report, page, and visual-level **filters**. Extensive use of **Slicers** for dynamic user interaction and on-the-fly data segmentation.
+* **Marks/Aesthetics:** Utilized the formatting options to refine visual encoding (**Marks**), controlling color, size, and data labels for maximum impact and readability.
 
 ***
 
 ## 📊 Project Deep Dives
 
-### Project 1: Sales Analysis Dashboard
-* **File:** `08-Solution-Sales Analysis.pbix`
-* **Goal:** To provide a comprehensive, executive-level view of sales performance, profitability, and individual/regional contribution.
+### Project 1: Executive Summary – Finance Report (Core Financials)
+* **Power BI File:** `Executive Summary – Finance Report.pbix`
+* **Source Data:** `Financial Sample.xlsx - Sheet1.csv`
+* **Focus:** Comprehensive financial performance reporting, providing management with a clear view of revenue, cost, and profitability across the business.
+
+#### Key Analysis & Visualizations:
+* **Core Metrics:** Calculation and tracking of **Gross Sales**, **Sales**, **COGS (Cost of Goods Sold)**, and the calculated **Profit**.
+* **Profitability Breakdown:** Analysis of Profit and Profit Margin (%) segmented by **Segment**, **Country**, and **Product**.
+* **Discount Band Analysis:** Visualizing the relationship between different `Discount Bands` (e.g., High, Medium, Low) and their direct impact on volume (`Units Sold`) and overall `Profit`.
+* **Temporal Trends:** Line charts tracking **Sales** and **Profit** across the `Year` and `Month` to identify seasonality and growth rates.
+
+### Project 2: Sales Analysis Dashboard (Performance Tracking)
+* **Power BI File:** `08-Solution-Sales Analysis.pbix`
+* **Focus:** Detailed sales and profitability analysis, with an emphasis on individual and regional performance tracking.
 
 #### Key Focus Areas:
-* **Profitability Analysis:** The central analysis revolves around the calculated **Profit** measure (derived in DAX as `Total Revenue - Total Cost`) and the resulting **Profit Margin %**.
-* **"My Performance" Feature:** The dashboard includes functionality to analyze **individual performance** (e.g., a specific sales rep or manager). This feature typically uses DAX measures combined with **Slicers** to compare the selected individual's Sales and Profit metrics against the **overall company total** or specific **targets**. This is achieved by using functions like `ALLEXCEPT()` to maintain the context of the total while filtering the view by employee.
-* **Visualizations:** Features KPI Cards for high-level summaries, Line Charts for long-term trend analysis, and Bar/Column charts for product and regional breakdowns.
+* **Profit Calculation:** Uses the DAX formula for `Profit = Total Sales - Total Cost` to drive margin analysis.
+* **"My Performance" Feature:** This feature demonstrates an intermediate DAX skill. It utilizes **Slicers** and advanced **DAX filter context control** to allow a user to select an individual or team and see their Sales/Profit metrics compared side-by-side with the **Overall Company Total** or their **Goal/Target**.
+* **Visualizations:** Features KPI Cards, Line Charts for temporal trends, and Geographic Maps for regional sales contribution.
 
-### Project 2: Foundational Power BI Practice
-* **File:** `POWER BI DAY 1.pbix`
-* **Goal:** This project represents the initial learning phase, focusing on mastering the Power BI Desktop environment, correct data loading, and building basic visuals.
+### Project 3: Foundational Power BI Practice
+* **Power BI File:** `POWER BI DAY 1.pbix`
+* **Focus:** Mastering the basic BI workflow, ensuring correct data loading, and building simple, accurate visualizations based on initial data exploration.
 
-#### Key Focus Areas:
-* **Interface Familiarity:** Practice navigating between the Report, Data, and Model views.
-* **Basic Data Flow:** Focusing on the sequence: **Get Data** ➡️ **Transform Data (Power Query)** ➡️ **Load Data** ➡️ **Visualize**.
-* **Visual Building Blocks:** Practiced dragging measures and dimensions into the rows and columns of the visuals and observing how data types and aggregation functions influence the resulting chart output.
+#### Key Learning Focus:
+* Practicing the fundamental data flow sequence and ensuring all required columns (e.g., numerical fields used for `SUM` or `AVERAGE`) are loaded with the correct data type.
+* Building initial basic visuals like **clustered column charts** and **pie charts** to break down basic metrics by simple dimensions.
+
+***
+
+## 📂 Repository Files
+
+| File Name | Project | Description |
+| :--- | :--- | :--- |
+| `Executive Summary – Finance Report.pbix` | **Finance Report** | The comprehensive Power BI dashboard for financial performance analysis. |
+| `Financial Sample.xlsx - Sheet1.csv` | **Finance Report** | The clean transactional data source used to build the Finance Report. |
+| `08-Solution-Sales Analysis.pbix` | **Sales Analysis** | The solution file for the advanced Sales Analysis (My Performance) project. |
+| `POWER BI DAY 1.pbix` | **Foundational Practice** | Initial project demonstrating mastery of the basic Power BI interface and data flow. |
 
 ***
 
@@ -55,6 +77,6 @@ This portfolio validates expertise in the following key areas, which are essenti
 
 1.  **Clone the Repository:** Download the repository files to your local machine.
 2.  **Install Power BI Desktop:** Ensure you have [Microsoft Power BI Desktop](https://powerbi.microsoft.com/en-us/downloads/) installed.
-3.  **Open the Files:** Open both `.pbix` files.
-4.  **Inspect the Model:** Navigate to the **Model View** to inspect table relationships and the **Data View** to examine applied data types and calculated columns.
-5.  **Interact with the Reports:** Engage with the **Slicers** and click on different elements of the charts to experience the dynamic filtering capabilities of the dashboards, particularly in the Sales Analysis project.
+3.  **Open the Files:** Open all `.pbix` files.
+4.  **Inspect the Model & DAX:** Navigate to the **Model View** to inspect table relationships and the **Data View** to examine applied data types and calculated measures.
+5.  **Interact with the Reports:** Use the **Slicers** and click on different elements of the charts to experience the dynamic filtering and drill-down capabilities of the dashboards.
